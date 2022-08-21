@@ -1,4 +1,5 @@
-FROM python:slim
+ARG ARCH=
+FROM ${ARCH}python:slim
 
 # cd /app
 WORKDIR /app
