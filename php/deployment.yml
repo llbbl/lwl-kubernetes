@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-test
+  labels:
+    app: php
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-test
+  template:
+    metadata:
+      labels:
+        app: php-test
+    spec:
+      containers:
+      - name: php-test
+        image: registry.digitalocean.com/learn-with-logan/php-test:latest-amd64
+        ports:
+        - containerPort: 8890
